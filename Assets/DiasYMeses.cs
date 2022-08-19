@@ -6,16 +6,11 @@ public class DiasYMeses : MonoBehaviour
 {
     [SerializeField] string[] nombresMeses = new string[12];
     [SerializeField] int[] nombresDias = new int[12];
+    public int fechaIngresada;
         // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ValidarFormatoFecha(fechaIngresada);
     }
     bool ValidarFormatoFecha(string fecha)
     {
@@ -24,6 +19,13 @@ public class DiasYMeses : MonoBehaviour
         {
             string dia = "";
             dia += fecha[0];
+            dia += fecha[1];
+            int.Parse(dia);
+            Debug.Log(dia);
+        }
+        else
+        {
+            Debug.Log("El largo de la fecha es incorrecto")
         }
 
         return fechaValida;
